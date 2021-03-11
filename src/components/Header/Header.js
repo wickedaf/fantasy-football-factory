@@ -9,7 +9,7 @@ const Header = (props) => {
             {
                 props.showLogo 
                 ? <div className="bg-headerLogo"> <img className="mx-auto w-25" src={props.logo} alt=""/> </div> 
-                : <h1 className="">Sports Mania</h1>
+                : <h1 className="">Fantasy Football Factory </h1>
             }
         </div>
     );

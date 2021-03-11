@@ -1,4 +1,3 @@
-
 import './App.css';
 import Body from './components/Body/Body';
 import NotFound from './components/NotFound/NotFound';

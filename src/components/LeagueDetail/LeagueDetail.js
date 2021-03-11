@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import leagueThumb from '../../images/Photo/league-detail-thumb.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './LeagueDetail.css';
 import fbIcon from '../../images/Icon/Facebook.png'
@@ -8,6 +9,7 @@ import ytIcon from '../../images/Icon/YouTube.png'
 import twtIcon from '../../images/Icon/Twitter.png'
 import { faFlag, faFutbol, faMarker, faMars } from '@fortawesome/free-solid-svg-icons';
 import Header from '../Header/Header';
+import femaleBannerImg from '../../images/Photo/female.png';
 
 const LeagueDetail = () => {
     const { leagueId } = useParams();
@@ -24,7 +26,15 @@ const LeagueDetail = () => {
         <h1>Data is loading....</h1>
     }
     
-    const {strLeague, intFormedYear, strCountry, strSport, strGender, strDescriptionEN, strLogo} = leagueDetail;
+    const {strLeague, intFormedYear, strCountry, strSport, strGender, strDescriptionEN, strLogo, strFacebook, strYoutube, strTwitter, strFanart2} = leagueDetail;
+    const imageClick = (linkto) => {
+        window.location.href = linkto;
+    }
+    const femaleBanner = <img src={femaleBannerImg} className="rounded thumb-img w-100 shadow" alt=""/>;
+    const maleBanner = <img src={ strFanart2} className="rounded thumb-img w-100 shadow" alt="..." />;
+
+
+
     return (
         <div>
             <Header showLogo={true} logo={strLogo}></Header>
@@ -41,7 +51,9 @@ const LeagueDetail = () => {
                 </div>
                 <div className="col">
                     <div className="p-3">
-                        <img src={ leagueThumb } className="rounded thumb-img w-100 shadow" alt="..." /> 
+                        {
+                            strGender !== "Male" ? femaleBanner : maleBanner
+                        }
                     </div>
                 </div>
             </div>
@@ -49,9 +61,15 @@ const LeagueDetail = () => {
                 {strDescriptionEN}
             </div>
             <div className="row mx-auto py-4 w-50">
-                <div className="col"><img className="w-75" src={fbIcon} alt=""/></div>
-                <div className="col"><img className="w-75" src={ytIcon} alt=""/></div>
-                <div className="col"><img className="w-75" src={twtIcon} alt=""/></div>
+                <div className="col">
+                    <img onClick={() => imageClick(strFacebook)} className="w-75" src={fbIcon} alt=""/>
+                </div>
+                <div className="col">
+                    <img onClick={() => imageClick(strYoutube)} className="w-75" src={ytIcon} alt=""/>
+                </div>
+                <div className="col">
+                    <img onClick={() => imageClick(strTwitter)} className="w-75" src={twtIcon} alt=""/>
+                </div>
             </div>
         </div>
         </div>
