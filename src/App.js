@@ -1,4 +1,4 @@
-import Header from './components/Header/Header'
+
 import './App.css';
 import Body from './components/Body/Body';
 import NotFound from './components/NotFound/NotFound';
@@ -12,7 +12,6 @@ import LeagueDetail from './components/LeagueDetail/LeagueDetail';
 function App() {
   return (
     <div>
-      <Header></Header>
       <Router>
         <Switch>
             <Route path="/league/:leagueId">

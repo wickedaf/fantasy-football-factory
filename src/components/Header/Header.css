@@ -1,13 +1,27 @@
 .top-header{
-    background-image: url("./Rectangle\ 21.png");
+    background-image: url("./header-img.png");
     height: 40vh;
     object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .top-header h1{
-    align-items: center;
     background-color: rgba(0, 0, 0, 0.338);
     height: 100%;
+    width: 100%;
     color: white;
     font-weight: 600;
     font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-headerLogo{
+    background-color: rgba(0, 0, 0, 0.365);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

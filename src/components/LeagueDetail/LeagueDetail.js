@@ -7,6 +7,7 @@ import fbIcon from '../../images/Icon/Facebook.png'
 import ytIcon from '../../images/Icon/YouTube.png'
 import twtIcon from '../../images/Icon/Twitter.png'
 import { faFlag, faFutbol, faMarker, faMars } from '@fortawesome/free-solid-svg-icons';
+import Header from '../Header/Header';
 
 const LeagueDetail = () => {
     const { leagueId } = useParams();
@@ -23,9 +24,11 @@ const LeagueDetail = () => {
         <h1>Data is loading....</h1>
     }
     
-    const {strLeague, intFormedYear, strCountry, strSport, strGender, strDescriptionEN} = leagueDetail;
+    const {strLeague, intFormedYear, strCountry, strSport, strGender, strDescriptionEN, strLogo} = leagueDetail;
     return (
-        <div className="container overflow-hidden w-50">
+        <div>
+            <Header showLogo={true} logo={strLogo}></Header>
+            <div className="container overflow-hidden w-50">
             <div className="row league-detail-gutter d-flex align-items-center shadow">
                 <div className="col">
                     <div className="p-3">
@@ -51,6 +54,8 @@ const LeagueDetail = () => {
                 <div className="col"><img className="w-75" src={twtIcon} alt=""/></div>
             </div>
         </div>
+        </div>
+        
     );
 };
 
