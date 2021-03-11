@@ -27,9 +27,6 @@ const LeagueDetail = () => {
     }
     
     const {strLeague, intFormedYear, strCountry, strSport, strGender, strDescriptionEN, strLogo, strFacebook, strYoutube, strTwitter, strFanart2} = leagueDetail;
-    const imageClick = (linkto) => {
-        window.location.href = linkto;
-    }
     const femaleBanner = <img src={femaleBannerImg} className="rounded thumb-img w-100 shadow" alt=""/>;
     const maleBanner = <img src={ strFanart2} className="rounded thumb-img w-100 shadow" alt="..." />;
 
@@ -62,13 +59,20 @@ const LeagueDetail = () => {
             </div>
             <div className="row mx-auto py-4 w-50">
                 <div className="col">
-                    <img onClick={() => imageClick(strFacebook)} className="w-75" src={fbIcon} alt=""/>
+                    <a href={strFacebook}>
+                        <img className="w-75" src={fbIcon} alt=""/>
+                    </a>
+                    
                 </div>
                 <div className="col">
-                    <img onClick={() => imageClick(strYoutube)} className="w-75" src={ytIcon} alt=""/>
+                    <a href={strYoutube}>
+                        <img className="w-75" src={ytIcon} alt=""/>
+                    </a>
                 </div>
                 <div className="col">
-                    <img onClick={() => imageClick(strTwitter)} className="w-75" src={twtIcon} alt=""/>
+                    <a href={strTwitter}>
+                        <img className="w-75" src={twtIcon} alt=""/>
+                    </a>
                 </div>
             </div>
         </div>
